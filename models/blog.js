@@ -16,17 +16,16 @@ Blog.init(
     allowNull: false,
     },
     body: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
     },
-    author: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    },
-    posted: {
-    type: DataTypes.DATE,
-    timestamp: true
-    },      
+    user_id: {
+    type: DataTypes.INTEGER,
+    reference: {
+      model: 'user',
+      key: 'id',
+      },
+    },     
   },
   {
     sequelize,
